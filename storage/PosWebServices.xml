@@ -1,0 +1,1564 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns9="eHARGA" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns5="eIDORDER" xmlns:ns6="eIDBACKSHEET" xmlns:ns7="eIDPELANGGAN" xmlns:ns10="https://ws.posindonesia.co.id" xmlns:ns11="http://ws.wso2.org/dataservice" xmlns:ns8="eNAMA_PLG" xmlns:ns2="eIDKANTOR" xmlns:ns1="eBEA" xmlns:ns4="eJML" xmlns:ns3="eBERAT" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="PosWebServices" xmlns:ns0="rJUMLAH_JUAL" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="PosWebServices">
+    <wsdl:documentation>PT Pos Indonesia (Persero) Web Services                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="rJUMLAH_JUAL">
+            <xs:element name="sJUMLAH_JUAL" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eBEA">
+            <xs:element name="sBEA" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eIDKANTOR">
+            <xs:element name="sIDKANTOR" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eBERAT">
+            <xs:element name="sBERAT" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eJML">
+            <xs:element name="sJML" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eIDORDER">
+            <xs:element name="sIDORDER" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eIDBACKSHEET">
+            <xs:element name="sIDBACKSHEET" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eIDPELANGGAN">
+            <xs:element name="sIDPELANGGAN" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eNAMA_PLG">
+            <xs:element name="sNAMA_PLG" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="eHARGA">
+            <xs:element name="sHARGA" nillable="true" type="xs:string"/>
+            <xs:element name="sHARGA2" nillable="true" type="xs:string"/>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="https://ws.posindonesia.co.id">
+            <xs:import namespace="eIDORDER"/>
+            <xs:import namespace="eBEA"/>
+            <xs:import namespace="eHARGA"/>
+            <xs:import namespace="eBERAT"/>
+            <xs:import namespace="eIDKANTOR"/>
+            <xs:import namespace="eIDBACKSHEET"/>
+            <xs:import namespace="eIDPELANGGAN"/>
+            <xs:import namespace="eNAMA_PLG"/>
+            <xs:import namespace="eJML"/>
+            <xs:import namespace="rJUMLAH_JUAL"/>
+            <xs:element name="OPS_GET_REPORT_ANTAM_SLPK">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="TGL" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_reportslpk" type="ns10:rs_reportslpk"/>
+            <xs:complexType name="rs_reportslpk">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_reportslpk" type="ns10:r_reportslpk"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_reportslpk">
+                <xs:sequence>
+                    <xs:element ref="ns5:sIDORDER"/>
+                    <xs:element ref="ns1:sBEA"/>
+                    <xs:element ref="ns9:sHARGA"/>
+                    <xs:element ref="ns3:sBERAT"/>
+                    <xs:element ref="ns2:sIDKANTOR"/>
+                    <xs:element ref="ns6:sIDBACKSHEET"/>
+                    <xs:element ref="ns7:sIDPELANGGAN"/>
+                    <xs:element ref="ns8:sNAMA_PLG"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getTntBag">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="bagId" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_bagtnt" type="ns10:rs_bagtnt"/>
+            <xs:complexType name="rs_bagtnt">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_bagtnt" type="ns10:r_bagtnt"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_bagtnt">
+                <xs:sequence>
+                    <xs:element name="bagId" nillable="true" type="xs:string"/>
+                    <xs:element name="originOfficeId" nillable="true" type="xs:string"/>
+                    <xs:element name="destOfficeId" nillable="true" type="xs:string"/>
+                    <xs:element name="originMnfstOfficeId" nillable="true" type="xs:string"/>
+                    <xs:element name="destMnfstOfficeId" nillable="true" type="xs:string"/>
+                    <xs:element name="eventName" nillable="true" type="xs:string"/>
+                    <xs:element name="eventDate" nillable="true" type="xs:string"/>
+                    <xs:element name="transporter" nillable="true" type="xs:string"/>
+                    <xs:element name="manifestNumber" nillable="true" type="xs:string"/>
+                    <xs:element name="location" nillable="true" type="xs:string"/>
+                    <xs:element name="advisNumber" nillable="true" type="xs:string"/>
+                    <xs:element name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getTrackAndTracePiol">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="barcode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_tntpiol" type="ns10:rs_tntpiol"/>
+            <xs:complexType name="rs_tntpiol">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_tntpiol" type="ns10:r_tntpiol"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_tntpiol">
+                <xs:sequence>
+                    <xs:element name="p_barcode" nillable="true" type="xs:string"/>
+                    <xs:element name="p_officeCode" nillable="true" type="xs:string"/>
+                    <xs:element name="p_office" nillable="true" type="xs:string"/>
+                    <xs:element name="p_eventName" nillable="true" type="xs:string"/>
+                    <xs:element name="p_eventDate" nillable="true" type="xs:string"/>
+                    <xs:element name="p_description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="OPS_GET_REPORT_ANTAM_SUM">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="sTGL" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rst_reportsum" type="ns10:rst_reportsum"/>
+            <xs:complexType name="rst_reportsum">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="rs_reportsum" type="ns10:rs_reportsum"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="rs_reportsum">
+                <xs:sequence>
+                    <xs:element ref="ns9:sHARGA2"/>
+                    <xs:element ref="ns4:sJML"/>
+                    <xs:element ref="ns0:sJUMLAH_JUAL"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getPosCodeByAddrAndCity">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="city" nillable="true" type="xs:string"/>
+                        <xs:element name="address" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_postcode" type="ns10:rs_postcode"/>
+            <xs:complexType name="rs_postcode">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_postcode" type="ns10:r_postcode"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_postcode">
+                <xs:sequence>
+                    <xs:element name="posCode" nillable="true" type="xs:string"/>
+                    <xs:element name="address" nillable="true" type="xs:string"/>
+                    <xs:element name="city" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getFeePon">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="customerId" nillable="true" type="xs:string"/>
+                        <xs:element name="isDomestic" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="weight" nillable="true" type="xs:string"/>
+                        <xs:element name="length" nillable="true" type="xs:string"/>
+                        <xs:element name="width" nillable="true" type="xs:string"/>
+                        <xs:element name="height" nillable="true" type="xs:string"/>
+                        <xs:element name="diameter" nillable="true" type="xs:string"/>
+                        <xs:element name="itemValue" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_fee" type="ns10:rs_fee"/>
+            <xs:complexType name="rs_fee">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_fee" type="ns10:r_fee"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_fee">
+                <xs:sequence>
+                    <xs:element name="serviceCode" nillable="true" type="xs:string"/>
+                    <xs:element name="serviceName" nillable="true" type="xs:string"/>
+                    <xs:element name="fee" nillable="true" type="xs:string"/>
+                    <xs:element name="feeTax" nillable="true" type="xs:string"/>
+                    <xs:element name="insurance" nillable="true" type="xs:string"/>
+                    <xs:element name="insuranceTax" nillable="true" type="xs:string"/>
+                    <xs:element name="totalFee" nillable="true" type="xs:string"/>
+                    <xs:element name="itemValue" nillable="true" type="xs:string"/>
+                    <xs:element name="notes" nillable="true" type="xs:string"/>
+                    <xs:element name="estimation" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getTrackAndTracePiolDetail">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="barcode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_tntpioldetil" type="ns10:rs_tntpioldetil"/>
+            <xs:complexType name="rs_tntpioldetil">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_tntpioldetil" type="ns10:r_tntpioldetil"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_tntpioldetil">
+                <xs:sequence>
+                    <xs:element name="pd_barcode" nillable="true" type="xs:string"/>
+                    <xs:element name="pd_officeCode" nillable="true" type="xs:string"/>
+                    <xs:element name="pd_office" nillable="true" type="xs:string"/>
+                    <xs:element name="pd_eventName" nillable="true" type="xs:string"/>
+                    <xs:element name="pd_eventDate" nillable="true" type="xs:string"/>
+                    <xs:element name="pd_description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="addPostingLzd">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="type" nillable="true" type="xs:string"/>
+                        <xs:element name="externalId" nillable="true" type="xs:string"/>
+                        <xs:element name="customerId" nillable="true" type="xs:string"/>
+                        <xs:element name="serviceId" nillable="true" type="xs:string"/>
+                        <xs:element name="senderName" nillable="true" type="xs:string"/>
+                        <xs:element name="senderAddr" nillable="true" type="xs:string"/>
+                        <xs:element name="senderVill" nillable="true" type="xs:string"/>
+                        <xs:element name="senderSubDist" nillable="true" type="xs:string"/>
+                        <xs:element name="senderCity" nillable="true" type="xs:string"/>
+                        <xs:element name="senderProv" nillable="true" type="xs:string"/>
+                        <xs:element name="senderCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="senderEmail" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPhone" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverName" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverAddr" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverVill" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverSubDist" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverCity" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverProv" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverEmail" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPhone" nillable="true" type="xs:string"/>
+                        <xs:element name="orderDate" nillable="true" type="xs:string"/>
+                        <xs:element name="weight" nillable="true" type="xs:double"/>
+                        <xs:element name="fee" nillable="true" type="xs:string"/>
+                        <xs:element name="feeTax" nillable="true" type="xs:string"/>
+                        <xs:element name="insurance" nillable="true" type="xs:string"/>
+                        <xs:element name="insuranceTax" nillable="true" type="xs:string"/>
+                        <xs:element name="itemValue" nillable="true" type="xs:string"/>
+                        <xs:element name="contentDesc" nillable="true" type="xs:string"/>
+                        <xs:element name="installAmount" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_posting" type="ns10:rs_posting"/>
+            <xs:complexType name="rs_posting">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_posting" type="ns10:r_posting"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_posting">
+                <xs:sequence>
+                    <xs:element name="responseId" nillable="true" type="xs:string"/>
+                    <xs:element name="response" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="addPosting">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="type" nillable="true" type="xs:string"/>
+                        <xs:element name="externalId" nillable="true" type="xs:string"/>
+                        <xs:element name="customerId" nillable="true" type="xs:string"/>
+                        <xs:element name="serviceId" nillable="true" type="xs:string"/>
+                        <xs:element name="senderName" nillable="true" type="xs:string"/>
+                        <xs:element name="senderAddr" nillable="true" type="xs:string"/>
+                        <xs:element name="senderVill" nillable="true" type="xs:string"/>
+                        <xs:element name="senderSubDist" nillable="true" type="xs:string"/>
+                        <xs:element name="senderCity" nillable="true" type="xs:string"/>
+                        <xs:element name="senderProv" nillable="true" type="xs:string"/>
+                        <xs:element name="senderCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="senderEmail" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPhone" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverName" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverAddr" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverVill" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverSubDist" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverCity" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverProv" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverEmail" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPhone" nillable="true" type="xs:string"/>
+                        <xs:element name="orderDate" nillable="true" type="xs:string"/>
+                        <xs:element name="weight" nillable="true" type="xs:string"/>
+                        <xs:element name="fee" nillable="true" type="xs:string"/>
+                        <xs:element name="feeTax" nillable="true" type="xs:string"/>
+                        <xs:element name="insurance" nillable="true" type="xs:string"/>
+                        <xs:element name="insuranceTax" nillable="true" type="xs:string"/>
+                        <xs:element name="itemValue" nillable="true" type="xs:string"/>
+                        <xs:element name="contentDesc" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getExtid">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="extId" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_extid" type="ns10:rs_extid"/>
+            <xs:complexType name="rs_extid">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_extid" type="ns10:r_extid"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_extid">
+                <xs:sequence>
+                    <xs:element name="posId" nillable="true" type="xs:string"/>
+                    <xs:element name="externalId" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getTntPickup">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="extId" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_tntpickup" type="ns10:rs_tntpickup"/>
+            <xs:complexType name="rs_tntpickup">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_tntpickup" type="ns10:r_tntpickup"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_tntpickup">
+                <xs:sequence>
+                    <xs:element name="extId" nillable="true" type="xs:string"/>
+                    <xs:element name="procOffice" nillable="true" type="xs:string"/>
+                    <xs:element name="status" nillable="true" type="xs:string"/>
+                    <xs:element name="eventDate" nillable="true" type="xs:string"/>
+                    <xs:element name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getFee">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="customerId" nillable="true" type="xs:string"/>
+                        <xs:element name="isDomestic" nillable="true" type="xs:string"/>
+                        <xs:element name="isMerchandise" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="weight" nillable="true" type="xs:string"/>
+                        <xs:element name="length" nillable="true" type="xs:string"/>
+                        <xs:element name="width" nillable="true" type="xs:string"/>
+                        <xs:element name="height" nillable="true" type="xs:string"/>
+                        <xs:element name="diameter" nillable="true" type="xs:string"/>
+                        <xs:element name="itemValue" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRealTrans">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="externalId" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_realTrans" type="ns10:rs_realTrans"/>
+            <xs:complexType name="rs_realTrans">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_realTrans" type="ns10:r_realTrans"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_realTrans">
+                <xs:sequence>
+                    <xs:element name="posId" nillable="true" type="xs:string"/>
+                    <xs:element name="externalId" nillable="true" type="xs:string"/>
+                    <xs:element name="realSender" nillable="true" type="xs:string"/>
+                    <xs:element name="realReceiver" nillable="true" type="xs:string"/>
+                    <xs:element name="realFee" nillable="true" type="xs:string"/>
+                    <xs:element name="realWeight" nillable="true" type="xs:string"/>
+                    <xs:element name="realDescription" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="addBag">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="type" nillable="true" type="xs:string"/>
+                        <xs:element name="manifestNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="bagId" nillable="true" type="xs:string"/>
+                        <xs:element name="advisNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="bagProductId" nillable="true" type="xs:string"/>
+                        <xs:element name="weight" nillable="true" type="xs:string"/>
+                        <xs:element name="originOfficeId" nillable="true" type="xs:string"/>
+                        <xs:element name="destOfficeId" nillable="true" type="xs:string"/>
+                        <xs:element name="originMnfstOfficeId" nillable="true" type="xs:string"/>
+                        <xs:element name="destMnfstOfficeId" nillable="true" type="xs:string"/>
+                        <xs:element name="transporterNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="transporterName" nillable="true" type="xs:string"/>
+                        <xs:element name="driverName" nillable="true" type="xs:string"/>
+                        <xs:element name="coDriverName" nillable="true" type="xs:string"/>
+                        <xs:element name="moda" nillable="true" type="xs:string"/>
+                        <xs:element name="transporterTime" nillable="true" type="xs:string"/>
+                        <xs:element name="processTimeStamp" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_bag" type="ns10:rs_bag"/>
+            <xs:complexType name="rs_bag">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_bag" type="ns10:r_bag"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_bag">
+                <xs:sequence>
+                    <xs:element name="responseId" nillable="true" type="xs:string"/>
+                    <xs:element name="response" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="addPostingNew">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="type" nillable="true" type="xs:string"/>
+                        <xs:element name="externalId" nillable="true" type="xs:string"/>
+                        <xs:element name="customerId" nillable="true" type="xs:string"/>
+                        <xs:element name="serviceId" nillable="true" type="xs:string"/>
+                        <xs:element name="senderName" nillable="true" type="xs:string"/>
+                        <xs:element name="senderAddr" nillable="true" type="xs:string"/>
+                        <xs:element name="senderVill" nillable="true" type="xs:string"/>
+                        <xs:element name="senderSubDist" nillable="true" type="xs:string"/>
+                        <xs:element name="senderCity" nillable="true" type="xs:string"/>
+                        <xs:element name="senderProv" nillable="true" type="xs:string"/>
+                        <xs:element name="senderCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="senderEmail" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPhone" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverName" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverAddr" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverVill" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverSubDist" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverCity" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverProv" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverEmail" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPhone" nillable="true" type="xs:string"/>
+                        <xs:element name="orderDate" nillable="true" type="xs:string"/>
+                        <xs:element name="weight" nillable="true" type="xs:string"/>
+                        <xs:element name="fee" nillable="true" type="xs:string"/>
+                        <xs:element name="feeTax" nillable="true" type="xs:string"/>
+                        <xs:element name="insurance" nillable="true" type="xs:string"/>
+                        <xs:element name="insuranceTax" nillable="true" type="xs:string"/>
+                        <xs:element name="itemValue" nillable="true" type="xs:string"/>
+                        <xs:element name="contentDesc" nillable="true" type="xs:string"/>
+                        <xs:element name="installAmount" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_posting_new" type="ns10:rs_posting_new"/>
+            <xs:complexType name="rs_posting_new">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_posting_new" type="ns10:r_posting_new"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_posting_new">
+                <xs:sequence>
+                    <xs:element name="responseId" nillable="true" type="xs:string"/>
+                    <xs:element name="response" nillable="true" type="xs:string"/>
+                    <xs:element name="reftrans" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="addPickup">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="externalId" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupPic" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupAddr" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupCity" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupPhone" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupWeight" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupLength" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupWidth" nillable="true" type="xs:string"/>
+                        <xs:element name="pickupHeight" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_pickup" type="ns10:rs_pickup"/>
+            <xs:complexType name="rs_pickup">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_pickup" type="ns10:r_pickup"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_pickup">
+                <xs:sequence>
+                    <xs:element name="pickupRspnId" nillable="true" type="xs:string"/>
+                    <xs:element name="pickupRspn" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getFeePonPerProduct">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="customerId" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="productId" nillable="true" type="xs:string"/>
+                        <xs:element name="weight" nillable="true" type="xs:string"/>
+                        <xs:element name="length" nillable="true" type="xs:string"/>
+                        <xs:element name="width" nillable="true" type="xs:string"/>
+                        <xs:element name="height" nillable="true" type="xs:string"/>
+                        <xs:element name="diameter" nillable="true" type="xs:string"/>
+                        <xs:element name="itemValue" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getFeePiol">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="customerId" nillable="true" type="xs:string"/>
+                        <xs:element name="isDomestic" nillable="true" type="xs:string"/>
+                        <xs:element name="isMerchandise" nillable="true" type="xs:string"/>
+                        <xs:element name="senderPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="receiverPosCode" nillable="true" type="xs:string"/>
+                        <xs:element name="weight" nillable="true" type="xs:string"/>
+                        <xs:element name="length" nillable="true" type="xs:string"/>
+                        <xs:element name="width" nillable="true" type="xs:string"/>
+                        <xs:element name="height" nillable="true" type="xs:string"/>
+                        <xs:element name="diameter" nillable="true" type="xs:string"/>
+                        <xs:element name="itemValue" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getTrackAndTraceInt">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="barcode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_tntln" type="ns10:rs_tntln"/>
+            <xs:complexType name="rs_tntln">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_tntln" type="ns10:r_tntln"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_tntln">
+                <xs:sequence>
+                    <xs:element name="senderOfficeCode" nillable="true" type="xs:string"/>
+                    <xs:element name="senderOfficeName" nillable="true" type="xs:string"/>
+                    <xs:element name="dateLn" nillable="true" type="xs:string"/>
+                    <xs:element name="timeLn" nillable="true" type="xs:string"/>
+                    <xs:element name="upuCode" nillable="true" type="xs:string"/>
+                    <xs:element name="description" nillable="true" type="xs:string"/>
+                    <xs:element name="notes" nillable="true" type="xs:string"/>
+                    <xs:element name="receiverOfficeCode" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getTrackAndTrace">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userId" nillable="true" type="xs:string"/>
+                        <xs:element name="password" nillable="true" type="xs:string"/>
+                        <xs:element name="barcode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="rs_tnt" type="ns10:rs_tnt"/>
+            <xs:complexType name="rs_tnt">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="r_tnt" type="ns10:r_tnt"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="r_tnt">
+                <xs:sequence>
+                    <xs:element name="barcode" nillable="true" type="xs:string"/>
+                    <xs:element name="officeCode" nillable="true" type="xs:string"/>
+                    <xs:element name="office" nillable="true" type="xs:string"/>
+                    <xs:element name="eventName" nillable="true" type="xs:string"/>
+                    <xs:element name="eventDate" nillable="true" type="xs:string"/>
+                    <xs:element name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+            <xs:element name="DataServiceFault" type="xs:string"/>
+            <xs:element name="REQUEST_STATUS" type="xs:string"/>
+            <xs:element name="DATA_SERVICE_RESPONSE">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:any minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getFeeRequest">
+        <wsdl:part name="parameters" element="ns10:getFee"/>
+    </wsdl:message>
+    <wsdl:message name="getFeeResponse">
+        <wsdl:part name="parameters" element="ns10:rs_fee"/>
+    </wsdl:message>
+    <wsdl:message name="DataServiceFault">
+        <wsdl:part name="parameters" element="ns11:DataServiceFault"/>
+    </wsdl:message>
+    <wsdl:message name="getTntBagRequest">
+        <wsdl:part name="parameters" element="ns10:getTntBag"/>
+    </wsdl:message>
+    <wsdl:message name="getTntBagResponse">
+        <wsdl:part name="parameters" element="ns10:rs_bagtnt"/>
+    </wsdl:message>
+    <wsdl:message name="getTrackAndTraceRequest">
+        <wsdl:part name="parameters" element="ns10:getTrackAndTrace"/>
+    </wsdl:message>
+    <wsdl:message name="getTrackAndTraceResponse">
+        <wsdl:part name="parameters" element="ns10:rs_tnt"/>
+    </wsdl:message>
+    <wsdl:message name="getTrackAndTraceIntRequest">
+        <wsdl:part name="parameters" element="ns10:getTrackAndTraceInt"/>
+    </wsdl:message>
+    <wsdl:message name="getTrackAndTraceIntResponse">
+        <wsdl:part name="parameters" element="ns10:rs_tntln"/>
+    </wsdl:message>
+    <wsdl:message name="getFeePonRequest">
+        <wsdl:part name="parameters" element="ns10:getFeePon"/>
+    </wsdl:message>
+    <wsdl:message name="getFeePonResponse">
+        <wsdl:part name="parameters" element="ns10:rs_fee"/>
+    </wsdl:message>
+    <wsdl:message name="getTrackAndTracePiolRequest">
+        <wsdl:part name="parameters" element="ns10:getTrackAndTracePiol"/>
+    </wsdl:message>
+    <wsdl:message name="getTrackAndTracePiolResponse">
+        <wsdl:part name="parameters" element="ns10:rs_tntpiol"/>
+    </wsdl:message>
+    <wsdl:message name="getTntPickupRequest">
+        <wsdl:part name="parameters" element="ns10:getTntPickup"/>
+    </wsdl:message>
+    <wsdl:message name="getTntPickupResponse">
+        <wsdl:part name="parameters" element="ns10:rs_tntpickup"/>
+    </wsdl:message>
+    <wsdl:message name="getFeePiolRequest">
+        <wsdl:part name="parameters" element="ns10:getFeePiol"/>
+    </wsdl:message>
+    <wsdl:message name="getFeePiolResponse">
+        <wsdl:part name="parameters" element="ns10:rs_fee"/>
+    </wsdl:message>
+    <wsdl:message name="OPS_GET_REPORT_ANTAM_SUMRequest">
+        <wsdl:part name="parameters" element="ns10:OPS_GET_REPORT_ANTAM_SUM"/>
+    </wsdl:message>
+    <wsdl:message name="OPS_GET_REPORT_ANTAM_SUMResponse">
+        <wsdl:part name="parameters" element="ns10:rst_reportsum"/>
+    </wsdl:message>
+    <wsdl:message name="addPostingNewRequest">
+        <wsdl:part name="parameters" element="ns10:addPostingNew"/>
+    </wsdl:message>
+    <wsdl:message name="addPostingNewResponse">
+        <wsdl:part name="parameters" element="ns10:rs_posting_new"/>
+    </wsdl:message>
+    <wsdl:message name="addPostingRequest">
+        <wsdl:part name="parameters" element="ns10:addPosting"/>
+    </wsdl:message>
+    <wsdl:message name="addPostingResponse">
+        <wsdl:part name="parameters" element="ns10:rs_posting"/>
+    </wsdl:message>
+    <wsdl:message name="getRealTransRequest">
+        <wsdl:part name="parameters" element="ns10:getRealTrans"/>
+    </wsdl:message>
+    <wsdl:message name="getRealTransResponse">
+        <wsdl:part name="parameters" element="ns10:rs_realTrans"/>
+    </wsdl:message>
+    <wsdl:message name="getTrackAndTracePiolDetailRequest">
+        <wsdl:part name="parameters" element="ns10:getTrackAndTracePiolDetail"/>
+    </wsdl:message>
+    <wsdl:message name="getTrackAndTracePiolDetailResponse">
+        <wsdl:part name="parameters" element="ns10:rs_tntpioldetil"/>
+    </wsdl:message>
+    <wsdl:message name="getExtidRequest">
+        <wsdl:part name="parameters" element="ns10:getExtid"/>
+    </wsdl:message>
+    <wsdl:message name="getExtidResponse">
+        <wsdl:part name="parameters" element="ns10:rs_extid"/>
+    </wsdl:message>
+    <wsdl:message name="addBagRequest">
+        <wsdl:part name="parameters" element="ns10:addBag"/>
+    </wsdl:message>
+    <wsdl:message name="addBagResponse">
+        <wsdl:part name="parameters" element="ns10:rs_bag"/>
+    </wsdl:message>
+    <wsdl:message name="getPosCodeByAddrAndCityRequest">
+        <wsdl:part name="parameters" element="ns10:getPosCodeByAddrAndCity"/>
+    </wsdl:message>
+    <wsdl:message name="getPosCodeByAddrAndCityResponse">
+        <wsdl:part name="parameters" element="ns10:rs_postcode"/>
+    </wsdl:message>
+    <wsdl:message name="OPS_GET_REPORT_ANTAM_SLPKRequest">
+        <wsdl:part name="parameters" element="ns10:OPS_GET_REPORT_ANTAM_SLPK"/>
+    </wsdl:message>
+    <wsdl:message name="OPS_GET_REPORT_ANTAM_SLPKResponse">
+        <wsdl:part name="parameters" element="ns10:rs_reportslpk"/>
+    </wsdl:message>
+    <wsdl:message name="getFeePonPerProductRequest">
+        <wsdl:part name="parameters" element="ns10:getFeePonPerProduct"/>
+    </wsdl:message>
+    <wsdl:message name="getFeePonPerProductResponse">
+        <wsdl:part name="parameters" element="ns10:rs_fee"/>
+    </wsdl:message>
+    <wsdl:message name="addPostingLzdRequest">
+        <wsdl:part name="parameters" element="ns10:addPostingLzd"/>
+    </wsdl:message>
+    <wsdl:message name="addPostingLzdResponse">
+        <wsdl:part name="parameters" element="ns10:rs_posting"/>
+    </wsdl:message>
+    <wsdl:message name="addPickupRequest">
+        <wsdl:part name="parameters" element="ns10:addPickup"/>
+    </wsdl:message>
+    <wsdl:message name="addPickupResponse">
+        <wsdl:part name="parameters" element="ns10:rs_pickup"/>
+    </wsdl:message>
+    <wsdl:portType name="PosWebServicesPortType">
+        <wsdl:operation name="getFee">
+            <wsdl:documentation>Operation to get Pos Indonesia Mail and Parcel service fee</wsdl:documentation>
+            <wsdl:input message="tns:getFeeRequest" wsaw:Action="urn:getFee"/>
+            <wsdl:output message="tns:getFeeResponse" wsaw:Action="urn:getFeeResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getFeeDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTntBag">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getTntBagRequest" wsaw:Action="urn:getTntBag"/>
+            <wsdl:output message="tns:getTntBagResponse" wsaw:Action="urn:getTntBagResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getTntBagDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTrace">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getTrackAndTraceRequest" wsaw:Action="urn:getTrackAndTrace"/>
+            <wsdl:output message="tns:getTrackAndTraceResponse" wsaw:Action="urn:getTrackAndTraceResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getTrackAndTraceDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTraceInt">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getTrackAndTraceIntRequest" wsaw:Action="urn:getTrackAndTraceInt"/>
+            <wsdl:output message="tns:getTrackAndTraceIntResponse" wsaw:Action="urn:getTrackAndTraceIntResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getTrackAndTraceIntDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePon">
+            <wsdl:documentation>Operation to get Pos Indonesia Mail and Parcel service fee</wsdl:documentation>
+            <wsdl:input message="tns:getFeePonRequest" wsaw:Action="urn:getFeePon"/>
+            <wsdl:output message="tns:getFeePonResponse" wsaw:Action="urn:getFeePonResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getFeePonDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTracePiol">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getTrackAndTracePiolRequest" wsaw:Action="urn:getTrackAndTracePiol"/>
+            <wsdl:output message="tns:getTrackAndTracePiolResponse" wsaw:Action="urn:getTrackAndTracePiolResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getTrackAndTracePiolDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTntPickup">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getTntPickupRequest" wsaw:Action="urn:getTntPickup"/>
+            <wsdl:output message="tns:getTntPickupResponse" wsaw:Action="urn:getTntPickupResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getTntPickupDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePiol">
+            <wsdl:documentation>Operation to get Pos Indonesia Mail and Parcel service fee</wsdl:documentation>
+            <wsdl:input message="tns:getFeePiolRequest" wsaw:Action="urn:getFeePiol"/>
+            <wsdl:output message="tns:getFeePiolResponse" wsaw:Action="urn:getFeePiolResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getFeePiolDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="OPS_GET_REPORT_ANTAM_SUM">
+            <wsdl:documentation>                                    GET_REPORT_ANTAM_SUM                                                                                                            </wsdl:documentation>
+            <wsdl:input message="tns:OPS_GET_REPORT_ANTAM_SUMRequest" wsaw:Action="urn:OPS_GET_REPORT_ANTAM_SUM"/>
+            <wsdl:output message="tns:OPS_GET_REPORT_ANTAM_SUMResponse" wsaw:Action="urn:OPS_GET_REPORT_ANTAM_SUMResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:OPS_GET_REPORT_ANTAM_SUMDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="addPostingNew">
+            <wsdl:documentation>Operation to post item data direct to Pos Indonesia Mail and Parcel System                                     </wsdl:documentation>
+            <wsdl:input message="tns:addPostingNewRequest" wsaw:Action="urn:addPostingNew"/>
+            <wsdl:output message="tns:addPostingNewResponse" wsaw:Action="urn:addPostingNewResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:addPostingNewDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="addPosting">
+            <wsdl:documentation>Operation to post item data direct to Pos Indonesia Mail and Parcel System </wsdl:documentation>
+            <wsdl:input message="tns:addPostingRequest" wsaw:Action="urn:addPosting"/>
+            <wsdl:output message="tns:addPostingResponse" wsaw:Action="urn:addPostingResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:addPostingDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getRealTrans">
+            <wsdl:documentation>Operation to get Pos Indonesia Mail and Parcel service real fee</wsdl:documentation>
+            <wsdl:input message="tns:getRealTransRequest" wsaw:Action="urn:getRealTrans"/>
+            <wsdl:output message="tns:getRealTransResponse" wsaw:Action="urn:getRealTransResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getRealTransDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTracePiolDetail">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getTrackAndTracePiolDetailRequest" wsaw:Action="urn:getTrackAndTracePiolDetail"/>
+            <wsdl:output message="tns:getTrackAndTracePiolDetailResponse" wsaw:Action="urn:getTrackAndTracePiolDetailResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getTrackAndTracePiolDetailDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getExtid">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:getExtidRequest" wsaw:Action="urn:getExtid"/>
+            <wsdl:output message="tns:getExtidResponse" wsaw:Action="urn:getExtidResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getExtidDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="addBag">
+            <wsdl:documentation>Operation to post bag data (such as CN38) direct to Pos Indonesia Mail and Parcel System </wsdl:documentation>
+            <wsdl:input message="tns:addBagRequest" wsaw:Action="urn:addBag"/>
+            <wsdl:output message="tns:addBagResponse" wsaw:Action="urn:addBagResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:addBagDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPosCodeByAddrAndCity">
+            <wsdl:documentation>Operation to get pos code by city and address from Pos Indonesia Mail and Parcel System </wsdl:documentation>
+            <wsdl:input message="tns:getPosCodeByAddrAndCityRequest" wsaw:Action="urn:getPosCodeByAddrAndCity"/>
+            <wsdl:output message="tns:getPosCodeByAddrAndCityResponse" wsaw:Action="urn:getPosCodeByAddrAndCityResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getPosCodeByAddrAndCityDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="OPS_GET_REPORT_ANTAM_SLPK">
+            <wsdl:documentation>                         GET_REPORT_ANTAM_SLPK                                                                                   </wsdl:documentation>
+            <wsdl:input message="tns:OPS_GET_REPORT_ANTAM_SLPKRequest" wsaw:Action="urn:OPS_GET_REPORT_ANTAM_SLPK"/>
+            <wsdl:output message="tns:OPS_GET_REPORT_ANTAM_SLPKResponse" wsaw:Action="urn:OPS_GET_REPORT_ANTAM_SLPKResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:OPS_GET_REPORT_ANTAM_SLPKDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePonPerProduct">
+            <wsdl:documentation>Operation to get Pos Indonesia Mail and Parcel service fee</wsdl:documentation>
+            <wsdl:input message="tns:getFeePonPerProductRequest" wsaw:Action="urn:getFeePonPerProduct"/>
+            <wsdl:output message="tns:getFeePonPerProductResponse" wsaw:Action="urn:getFeePonPerProductResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:getFeePonPerProductDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="addPostingLzd">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:addPostingLzdRequest" wsaw:Action="urn:addPostingLzd"/>
+            <wsdl:output message="tns:addPostingLzdResponse" wsaw:Action="urn:addPostingLzdResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:addPostingLzdDataServiceFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="addPickup">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:addPickupRequest" wsaw:Action="urn:addPickup"/>
+            <wsdl:output message="tns:addPickupResponse" wsaw:Action="urn:addPickupResponse"/>
+            <wsdl:fault message="tns:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:addPickupDataServiceFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PosWebServicesSOAP11Binding" type="tns:PosWebServicesPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getFee">
+            <soap:operation soapAction="urn:getFee" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTntBag">
+            <soap:operation soapAction="urn:getTntBag" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTrace">
+            <soap:operation soapAction="urn:getTrackAndTrace" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTraceInt">
+            <soap:operation soapAction="urn:getTrackAndTraceInt" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePon">
+            <soap:operation soapAction="urn:getFeePon" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTracePiol">
+            <soap:operation soapAction="urn:getTrackAndTracePiol" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTntPickup">
+            <soap:operation soapAction="urn:getTntPickup" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePiol">
+            <soap:operation soapAction="urn:getFeePiol" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OPS_GET_REPORT_ANTAM_SUM">
+            <soap:operation soapAction="urn:OPS_GET_REPORT_ANTAM_SUM" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addPostingNew">
+            <soap:operation soapAction="urn:addPostingNew" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addPosting">
+            <soap:operation soapAction="urn:addPosting" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getRealTrans">
+            <soap:operation soapAction="urn:getRealTrans" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTracePiolDetail">
+            <soap:operation soapAction="urn:getTrackAndTracePiolDetail" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getExtid">
+            <soap:operation soapAction="urn:getExtid" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addBag">
+            <soap:operation soapAction="urn:addBag" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPosCodeByAddrAndCity">
+            <soap:operation soapAction="urn:getPosCodeByAddrAndCity" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OPS_GET_REPORT_ANTAM_SLPK">
+            <soap:operation soapAction="urn:OPS_GET_REPORT_ANTAM_SLPK" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePonPerProduct">
+            <soap:operation soapAction="urn:getFeePonPerProduct" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addPostingLzd">
+            <soap:operation soapAction="urn:addPostingLzd" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addPickup">
+            <soap:operation soapAction="urn:addPickup" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="PosWebServicesSOAP12Binding" type="tns:PosWebServicesPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getFee">
+            <soap12:operation soapAction="urn:getFee" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTntBag">
+            <soap12:operation soapAction="urn:getTntBag" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTrace">
+            <soap12:operation soapAction="urn:getTrackAndTrace" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTraceInt">
+            <soap12:operation soapAction="urn:getTrackAndTraceInt" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePon">
+            <soap12:operation soapAction="urn:getFeePon" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTracePiol">
+            <soap12:operation soapAction="urn:getTrackAndTracePiol" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTntPickup">
+            <soap12:operation soapAction="urn:getTntPickup" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePiol">
+            <soap12:operation soapAction="urn:getFeePiol" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OPS_GET_REPORT_ANTAM_SUM">
+            <soap12:operation soapAction="urn:OPS_GET_REPORT_ANTAM_SUM" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addPostingNew">
+            <soap12:operation soapAction="urn:addPostingNew" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addPosting">
+            <soap12:operation soapAction="urn:addPosting" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getRealTrans">
+            <soap12:operation soapAction="urn:getRealTrans" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTracePiolDetail">
+            <soap12:operation soapAction="urn:getTrackAndTracePiolDetail" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getExtid">
+            <soap12:operation soapAction="urn:getExtid" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addBag">
+            <soap12:operation soapAction="urn:addBag" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getPosCodeByAddrAndCity">
+            <soap12:operation soapAction="urn:getPosCodeByAddrAndCity" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="OPS_GET_REPORT_ANTAM_SLPK">
+            <soap12:operation soapAction="urn:OPS_GET_REPORT_ANTAM_SLPK" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePonPerProduct">
+            <soap12:operation soapAction="urn:getFeePonPerProduct" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addPostingLzd">
+            <soap12:operation soapAction="urn:addPostingLzd" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="addPickup">
+            <soap12:operation soapAction="urn:addPickup" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DataServiceFault">
+                <soap12:fault use="literal" name="DataServiceFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="PosWebServicesHttpBinding" type="tns:PosWebServicesPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getFee">
+            <http:operation location="getFee"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTntBag">
+            <http:operation location="getTntBag"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTrace">
+            <http:operation location="getTrackAndTrace"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTraceInt">
+            <http:operation location="getTrackAndTraceInt"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePon">
+            <http:operation location="getFeePon"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTracePiol">
+            <http:operation location="getTrackAndTracePiol"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTntPickup">
+            <http:operation location="getTntPickup"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePiol">
+            <http:operation location="getFeePiol"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="OPS_GET_REPORT_ANTAM_SUM">
+            <http:operation location="OPS_GET_REPORT_ANTAM_SUM"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addPostingNew">
+            <http:operation location="addPostingNew"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addPosting">
+            <http:operation location="addPosting"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRealTrans">
+            <http:operation location="getRealTrans"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackAndTracePiolDetail">
+            <http:operation location="getTrackAndTracePiolDetail"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getExtid">
+            <http:operation location="getExtid"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addBag">
+            <http:operation location="addBag"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPosCodeByAddrAndCity">
+            <http:operation location="getPosCodeByAddrAndCity"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="OPS_GET_REPORT_ANTAM_SLPK">
+            <http:operation location="OPS_GET_REPORT_ANTAM_SLPK"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getFeePonPerProduct">
+            <http:operation location="getFeePonPerProduct"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addPostingLzd">
+            <http:operation location="addPostingLzd"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addPickup">
+            <http:operation location="addPickup"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+	
+    <wsdl:service name="PosWebServices">
+        <wsdl:port name="SecureSOAP11Endpoint" binding="tns:PosWebServicesSOAP11Binding">
+            <soap:address location="https://ws.posindonesia.co.id:8161/services/PosWebServices.SecureSOAP11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureSOAP12Endpoint" binding="tns:PosWebServicesSOAP12Binding">
+            <soap12:address location="https://ws.posindonesia.co.id:8161/services/PosWebServices.SecureSOAP12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="SecureHTTPEndpoint" binding="tns:PosWebServicesHttpBinding">
+            <http:address location="https://ws.posindonesia.co.id:8161/services/PosWebServices.SecureHTTPEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+	
+</wsdl:definitions>
